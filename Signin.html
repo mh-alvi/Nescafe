@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In</title>
+    <!-- MATERIAL CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e0836293cf.js" crossorigin="anonymous"></script>
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="./Signin.css">
+</head>
+
+<body>
+    <div class="container">
+
+
+
+
+
+
+        <div class="wrapper">
+            <div class="left">
+
+                <img src="./images/Logo.png" alt="NesCafe">
+            </div>
+            <div class="right">
+                <div class="tabs">
+                    <ul>
+
+                        <li class="login_li">NESCAFÉ</li>
+                    </ul>
+                </div>
+
+
+
+                <div class="login">
+                    <div class="input_field">
+                        <input type="text" placeholder="Username" class="input">
+                    </div>
+                    <div class="input_field">
+                        <input type="password" placeholder="Password" class="input"
+                        id="password"><span class="material-icons-sharp" aria-hidden="true" id="eye" onclick="toggle()">
+                            visibility
+                            </span>
+                    </div>
+                    <div class="btn"><a href="./index.html"><span class="material-icons-sharp">login</span>
+                            <h3>Log-In</h3>
+                        </a></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!---------------------------------- END OF Sign-In ---------------------------------------->
+
+
+
+
+
+    </div>
+    <!-- ----------------------------------JAVASCRIPT FOR TOOGLE PASSW0RD ---------------------------->
+    <script>
+        var state=false;
+        function toggle(){
+            if(state){
+                document.getElementById("password").setAttribute("type", "password");
+                document.getElementById("eye").style.color='#dce1eb';
+                state=false;
+
+            }
+            else{
+                document.getElementById("password").setAttribute("type", "text");
+                document.getElementById("eye").style.color='#783D41';
+                state=true;
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

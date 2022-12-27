@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <!-- MATERIAL CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet">
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="./createemployee.css">
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <!-- For Logo -->
+
+                <div class="logo">
+                    <img src="./images/Logo.png" alt="">
+                </div>
+
+                <!-- For Close Button -->
+
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+                <!---------------------------------- START OF SIDEBAR ------------------------------------->
+
+                <div class="sidebar">
+                    <a href="index.html"><span class="material-icons-sharp">dashboard</span>
+                        <h3>Dashboard</h3>
+                    </a>
+
+                    <a href="#" class="active"><span class="material-icons-sharp">post_add</span>
+                        <h3>Sales Posting</h3>
+                    </a>
+
+                    <a href="#"><span class="material-icons-sharp">inventory_2 </span>
+                        <h3>Stock Posting</h3>
+                    </a>
+
+                    <a href="#"><span class="material-icons-sharp">summarize</span>
+                        <h3>Reports</h3>
+                    </a>
+
+                    <a href="#"><span class="material-icons-sharp">inventory</span>
+                        <h3>Products</h3>
+                    </a>
+
+                    <a href="#"><span class="material-icons-sharp">bar_chart</span>
+                        <h3>Overview</h3>
+                    </a>
+
+                    <a href="employee.html"><span class="material-icons-sharp">badge</span>
+                        <h3>Employee</h3>
+                    </a>
+
+                    <a href="attendence.html"><span class="material-icons-sharp">fact_check</span>
+                        <h3>Attendance</h3>
+                    </a>
+
+                    <a href="#"><span class="material-icons-sharp">toll</span>
+                        <h3>Booth</h3>
+                    </a>
+
+                    <a href="#"><span class="material-icons-sharp">logout</span>
+                        <h3>Log-out</h3>
+                    </a>
+                    
+                </div>
+            </aside>
+
+            
+
+                <!-- ------------------------------------END OF SIDEBAR ------------------------------------->
+                <div class="containerR">
+                    <div class="title">Add Employee</div>
+                    <div class="content">
+                      <form action="#">
+                        <div class="user-details">
+                          <div class="input-box">
+                            <span class="details">Full Name</span>
+                            <input type="text" placeholder="Enter name" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Designation</span>
+                            <input type="text" placeholder="Enter designation" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Job-ID</span>
+                            <input type="text" placeholder="Enter job-id" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="text" placeholder="Enter email" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Phone Number</span>
+                            <input type="text" placeholder="Enter number" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Address</span>
+                            <input type="text" placeholder="Enter address" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">NID</span>
+                            <input type="text" placeholder="Enter NID no" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Join Date</span>
+                            <input type="date" placeholder="Enter joining date" required>
+                          </div>
+                        </div>
+                        <div class="gender-details">
+                          <input type="radio" name="gender" id="dot-1">
+                          <input type="radio" name="gender" id="dot-2">
+                          <input type="radio" name="gender" id="dot-3">
+                          <span class="gender-title">Gender</span>
+                          <div class="category">
+                            <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                          </label>
+                          <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                          </label>
+                          <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Prefer not to say</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="button">
+                          <input type="submit" value="Create">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                
+            
+
+
+
+
+            
+    </div>
+    
+</body>
+</html>
