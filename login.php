@@ -35,16 +35,7 @@
                         <li class="login_li">NESCAFÉ</li>
                     </ul>
                 </div>
-                <?php
-                    if(isset($_SESSION['login'])){
-                        echo $_SESSION['login']; //display session message
-                        unset($_SESSION['login']); //removing session message
-                    }
-                    if(isset($_SESSION['not-login-message'])){
-                        echo $_SESSION['not-login-message']; //display session message
-                        unset($_SESSION['not-login-message']); //removing session message
-                    }
-                ?>
+
 
                 <form action="" method="post">
 
@@ -58,11 +49,23 @@
                                 visibility
                             </span>
                         </div>
-                        <div class="btn">
+                        
+                        <div class="btn-login">
                             <input type="submit" name="submit" value="Log-In">
                         </div>
+                        <br>
+                <?php
+                    if(isset($_SESSION['login'])){
+                        echo $_SESSION['login']; //display session message
+                        unset($_SESSION['login']); //removing session message
+                    }
+                    if(isset($_SESSION['not-login-message'])){
+                        echo $_SESSION['not-login-message']; //display session message
+                        unset($_SESSION['not-login-message']); //removing session message
+                    }
+                ?>
                     </div>
-            </form>
+                </form>
 
             </div>
         </div>

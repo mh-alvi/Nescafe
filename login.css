@@ -320,8 +320,8 @@ margin-left: 1rem;
   }
   
   .wrapper .right .btn{
-    margin-top: 5rem;
-    background: #7C3F43;
+    
+    background-color: #7C3F43;
     padding: 10px;
     text-align: center;
     text-transform: uppercase;
@@ -360,3 +360,17 @@ background-color: #783D41;
 .error{
     color: #ff4757;
 }
+ .btn-login input{
+    
+  background-color: #7C3F43;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  border-radius: var(--border-radius-2);
+  color: var(--color-background);
+  width: 100%;
+  
+}
+

@@ -266,12 +266,15 @@ body{
   cursor: pointer;
   width: 175px;
   margin-left: 10px;
-  margin-top: 4px;
+  margin-top: 10px;
   font-family: "poppins",sans-serif;
+  font-weight: bold;
+  
   
 }
 .drop form{
-  height: 25px;
+  height: 40px;
+  width: 40%;
 }
 
 

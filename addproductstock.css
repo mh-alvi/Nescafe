@@ -259,7 +259,7 @@ body{
 .containerR .title{
   font-size: 25px;
   font-weight: 500;
-  
+ 
 }
 /* .containerR .title::before{
   content: "";
@@ -271,21 +271,15 @@ body{
   border-radius: 5px;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 } */
-.content .user-details .input-box{
-  padding-bottom: 10px;
-}
 .content form .user-details{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
-  margin-bottom: 4px;
-  
 }
 form .user-details .input-box{
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
-  padding-bottom: 15px;
 }
 form .input-box span.details{
   display: block;
@@ -303,6 +297,7 @@ form .input-box span.details{
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
+
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
   border-color:var(--color-coffee-dark);
@@ -392,6 +387,17 @@ form .input-box span.details{
     font-family: "poppins",sans-serif;
     
   }
+  .drop input{
+    cursor: pointer;
+    width: 240px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: "poppins",sans-serif;
+    
+  }
+  .submit{
+    margin-top: -8px;
+  }
   
   .button {
     background-color: var(--color-coffee-dark);
@@ -409,7 +415,7 @@ form .input-box span.details{
 
   .table{
     border-collapse: collapse;
-    margin: 25px 0;
+    
     font-size: 15px;
     min-width: 100%;
     overflow: hidden;
@@ -548,23 +554,4 @@ form .user-details .input-box{
 }
 .error{
     color: #ff4757;
-}
-
-.table button{
-  padding: 6px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  background: transparent;
-  border: 1px solid var(--color-coffee-dark);
-  background-color: #2ed573;
-  color: whitesmoke
-}
-.table .inactive-button{
-  padding: 6px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  background: transparent;
-  border: 1px solid var(--color-coffee-dark);
-  background-color: #ff4757 ;
-  color: whitesmoke;
 }

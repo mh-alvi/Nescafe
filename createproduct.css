@@ -258,9 +258,9 @@ body{
 .containerR .title{
   font-size: 25px;
   font-weight: 500;
-  position: relative;
+  
 }
-.containerR .title::before{
+/* .containerR .title::before{
   content: "";
   position: absolute;
   left: 0;
@@ -269,7 +269,7 @@ body{
   width: 30px;
   border-radius: 5px;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
-}
+} */
 .content form .user-details{
   display: flex;
   flex-wrap: wrap;

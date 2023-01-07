@@ -55,15 +55,15 @@ include('./partials/login-check.php');
               </div>
             </li>
 
-            <li class="open-prosubmenu"><a href="">Stock</a><i class="fa fa-angle-right"></i>
-              <div class="pro-submenu">
+            <li class="open-prosubmenu"><a href="addproductstock.php">Stock</a>
+              <!-- <div class="pro-submenu">
                 <ul>
-                  <li><a href="">Add Product Stock</a></li>
+                  <li><a href="addproductstock.php">Add Product Stock</a></li>
                   <li><a href="">Add Cup Stock</a></li>
                   <li><a href="">Product Stock List</a></li>
                   <li><a href="">Cup Stock List</a></li>
                 </ul>
-              </div>
+              </div> -->
             </li>
 
             <li class="open-prosubmenu"><a href="">Booth</a><i class="fa fa-angle-right"></i>
@@ -306,10 +306,10 @@ include('./partials/login-check.php');
 
                       if ($auth_status == 1) {
 
-                        echo '<p><a  href="./all-status/auth-status.php?id=' . $id  . '&action=0" ><button class="success">Active</button></a></p>';
+                        echo '<p><a  href="./all-status/auth-status.php?id=' . $id  . '&action=0" ><button class="active-button">Active</button></a></p>';
                       } else if ($auth_status == 0) {
 
-                        echo '<p><a href="./all-status/auth-status.php?id=' . $id  . '&action=1"><button  class="error">Inactive</button></a></p>';
+                        echo '<p><a href="./all-status/auth-status.php?id=' . $id  . '&action=1"><button  class="inactive-button">Inactive</button></a></p>';
                       }
                       ?>
                     </td>

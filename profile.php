@@ -54,15 +54,8 @@ include('./partials/login-check.php');
                             </div>
                         </li>
 
-                        <li class="open-prosubmenu"><a href="">Stock</a><i class="fa fa-angle-right"></i>
-                            <div class="pro-submenu">
-                                <ul>
-                                    <li><a href="">Add Product Stock</a></li>
-                                    <li><a href="">Add Cup Stock</a></li>
-                                    <li><a href="">Product Stock List</a></li>
-                                    <li><a href="">Cup Stock List</a></li>
-                                </ul>
-                            </div>
+                        <li class="open-prosubmenu"><a href="addproductstock.php">Stock</a>
+                            
                         </li>
 
                         <li class="open-prosubmenu"><a href="">Booth</a><i class="fa fa-angle-right"></i>

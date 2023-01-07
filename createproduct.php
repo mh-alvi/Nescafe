@@ -53,15 +53,15 @@ include('./partials/login-check.php');
               </div>
             </li>
 
-            <li class="open-prosubmenu"><a href="">Stock</a><i class="fa fa-angle-right"></i>
-              <div class="pro-submenu">
+            <li class="open-prosubmenu"><a href="addproductstock.php">Stock</a>
+              <!-- <div class="pro-submenu">
                 <ul>
-                  <li><a href="">Add Product Stock</a></li>
+                  <li><a href="addproductstock.php">Add Product Stock</a></li>
                   <li><a href="">Add Cup Stock</a></li>
                   <li><a href="">Product Stock List</a></li>
                   <li><a href="">Cup Stock List</a></li>
                 </ul>
-              </div>
+              </div> -->
             </li>
 
             <li class="open-prosubmenu"><a href="boothtag.php">Booth</a><i class="fa fa-angle-right"></i>
@@ -126,7 +126,7 @@ include('./partials/login-check.php');
     <div class="containerR">
       <div class="title">Add Products</div>
       <div class="content">
-        <form action="" method="POST">
+        <form method="POST">
           <div class="user-details">
             <div class="input-box">
               <span class="details">Name</span>
@@ -175,10 +175,10 @@ include('./partials/login-check.php');
           $product_name = $_POST['product-name'];
           $product_price = $_POST['product-price'];
 
-          if ($_POST['unit'] == 'male') {
+          if ($_POST['unit'] == 'Kilogram(KG)') {
             //Get the value from form
             $unit = $_POST['unit'];
-          } elseif ($_POST['unit'] == 'female') {
+          } elseif ($_POST['unit'] == 'Gram(G)') {
             $unit = $_POST['unit'];
           } else {
             $unit = $_POST['unit'];
