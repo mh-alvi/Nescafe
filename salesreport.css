@@ -1,0 +1,537 @@
+/*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300;500;600;700;800&display=swap'); 
+
+/* -------------------Root variables--------------------- */
+:root{
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: #848bc8;
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --color-coffee-dark:#7C3F43;
+    --color-coffee-light:#783D41;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 .5rem 1rem var(--color-light);
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size:14px;
+}
+
+body {
+    width: auto;
+    height: auto;
+    font-family: poppins, sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden; /*this is for scroll*/
+    color: var(--color-dark);
+
+}
+.container2{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    
+}
+
+a{
+    color: var(--color-dark);
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+
+}
+
+h2{
+    font-size: 1.4rem;
+
+}
+
+h3{
+    font-size: 0.87;
+
+}
+
+h4{
+    font-size: 0.8rem;
+
+}
+
+h5{
+    font-size: 0.77;
+}
+
+small{
+    font-size: 0.75rem;
+}
+
+.profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow:hidden;
+
+}
+
+.text-muted{
+    color:var(--color-info-dark);
+}
+
+p{
+    color:var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+
+}
+
+.primary{
+    color:var(--color-primary);
+}
+.danger{
+    color:var(--color-danger);
+}
+.success{
+    color:var(--color-success);
+}
+.warning{
+    color:var(--color-warning);
+}
+
+/* ----------------------------------------------------ASIDE ------------------------------------------------*/
+
+
+
+/* -------------------------------------------SIDEBAR--------------------------------------------------------- */
+
+*{
+  padding: 0;
+  margin: 0;
+    box-sizing: border-box;
+}
+body{
+  background-size: cover;
+  background-position: center;
+
+  font-family: sans-serif;
+}
+.menu-bar
+{
+  background: #6E363A;
+  text-align: center;
+  
+}
+
+.menu-bar ul
+{
+  display: inline-flex;
+  list-style: none;
+  color: white;
+}
+.menu-bar ul li
+{
+  width: 120px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.menu-bar ul li a
+{
+  text-decoration: none;
+  color: white;
+
+}
+
+.active,.menu-bar ul li:hover
+{
+  background: #93494E;
+  border-radius: 3px;
+}
+
+.menu-bar .fa
+{
+  margin-right: 8px;
+}
+
+.submenu-user
+{
+  display: none;
+}
+.menu-bar ul li:hover .submenu-user
+{
+  display: block;
+  position: absolute;
+  background: #6E363A;
+  margin-top: 15px;
+  margin-left: -15px;
+}
+.menu-bar ul li:hover .submenu-user ul
+{
+  display: block;
+   margin: 10px;
+}
+.menu-bar ul li:hover .submenu-user ul li
+{
+  width: 150px;
+  padding: 10px;
+  border-bottom: 1px dotted #fff;
+  background: transparent;
+  border-radius:0;
+  text-align: left;
+  
+}
+.menu-bar ul li:hover .submenu-user ul li:last-child
+{
+  border-bottom: none;    
+}
+.menu-bar ul li:hover .submenu-user ul li a:hover
+{
+  color: #CCBDBE;    
+}
+
+.fa-angle-right
+{
+  float: right;
+}
+.pro-submenu{
+  display: none;
+}
+
+.open-prosubmenu:hover .pro-submenu
+{
+    position: absolute;
+  display: block;
+  background: #6E363A;
+  margin-top: -40px;
+  margin-left: 140px;
+}
+
+.logo img{
+  width: 7rem;
+  height: 3rem;
+  margin-top: 1rem;
+  margin-left: -40px;
+
+}
+
+.drop{
+  border:1px solid black;
+  width: 20%;
+  
+  
+  border-radius: var(--border-radius-1);
+  margin-top: 5px;
+  
+}
+.drop select{
+  cursor: pointer;
+  width: 175px;
+  margin-left: 10px;
+  margin-top: 4px;
+  font-family: "poppins",sans-serif;
+  
+}
+.drop form{
+  height: 25px;
+}
+
+
+/* ----------------------------------------------------CALANDER ---------------------------------------------*/
+ .date{
+    display: inline-block;
+    background: var(--color-coffee-dark);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+   
+
+}
+
+ .date input[type='date']{
+    background: transparent;
+    color: var(--color-white);
+
+}
+/* Chnge the color of the calendar icon */
+.date input{
+  color-scheme: dark;
+}
+
+
+
+
+/*-----------------------------------------------Attendance List serction ---------------------------------- */
+.attendance{
+  margin-top: 20px;
+  text-transform: capitalize;
+  width: 100vw;
+  
+}
+.attendance-list{
+  width: 96vw;
+  padding: 10px;
+  margin-top: 10px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.table{
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  min-width: max-content;
+  overflow-x: scroll;
+  border-radius: 5px 5px 0 0;
+}
+/* scrollable table */
+.table-wrapper{
+  max-height: 500px;
+  overflow-y: scroll;
+  
+  overflow-x: scroll;
+}
+table thead tr{
+  color: #fff;
+  background:var(--color-coffee-light);
+  text-align: left;
+  font-weight: bold;
+}
+.table th,
+.table td{
+  padding: 12px 20px;
+}
+.table tbody tr{
+  border-bottom: 1px solid #ddd;
+}
+.table tbody tr:nth-of-type(odd){
+  background: #f3f3f3;
+}
+/* .table tbody tr.active{
+  font-weight: bold;
+  color: #4AD489;
+} */
+.table tbody tr:last-of-type{
+  border-bottom: 1px solid var(--color-danger);
+}
+.table button{
+  padding: 6px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--color-coffee-dark);
+}
+.table button:hover{
+  background: var(--color-danger);
+  color: #fff;
+  transition: 0.5rem;
+}
+
+ 
+ .btn{
+    margin-top: 5rem;
+    background:var(--color-coffee-dark);
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    border-radius: var(--border-radius-2);
+    width:25%;
+    
+  }
+  
+   .btn a {
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    display: flex;
+    padding-right: 1rem;
+    
+    
+    justify-content:space-evenly;
+    
+  }
+
+ .btn:hover {
+background-color:var(--color-coffee-light);
+  }
+
+
+  /* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width:45px;
+    height: 19px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--color-coffee-dark);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-coffee-dark);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  /* BUTTON DOWNLOAD */
+  .btn00 {
+    background-color: var(--color-coffee-dark);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: var(--border-radius-2);
+  }
+  .export{
+    margin-left: 69rem;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn00:hover {
+    background-color:var(--color-coffee-light);
+  }
+
+  /* Dropdown Button */
+.dropbtn {
+    background-color: var(--color-coffee-dark);
+    color: white;
+    padding: 16px;
+    margin-top: 1rem;
+    font-family: "poppins",sans-serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-2);
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: var(--color-coffee-light);
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+  .dropdown-container {
+    display: none;
+    background-color: var(--color-background);
+    padding-left: 8px;
+  }

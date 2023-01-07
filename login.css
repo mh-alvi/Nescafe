@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300;500;600;700;800&display=swap'); 
+
+/* -------------------Root variables--------------------- */
+:root{
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: #848bc8;
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 .5rem 1rem var(--color-light);
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size:14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: poppins, sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+
+}
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 23rem;
+}
+
+a{
+    color: var(--color-dark);
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+
+}
+
+h2{
+    font-size: 1.4rem;
+
+}
+
+h3{
+    font-size: 0.87;
+
+}
+
+h4{
+    font-size: 0.8rem;
+
+}
+
+h5{
+    font-size: 0.77;
+}
+
+small{
+    font-size: 0.75rem;
+}
+
+.profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow:hidden;
+
+}
+
+.text-muted{
+    color:var(--color-info-dark);
+}
+
+p{
+    color:var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+
+}
+
+.primary{
+    color:var(--color-primary);
+}
+.danger{
+    color:var(--color-danger);
+}
+.success{
+    color:var(--color-success);
+}
+.warning{
+    color:var(--color-warning);
+}
+
+aside{
+    height: 100vh;
+    
+}
+
+aside .top{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+aside .logo img{
+    width: 7rem;
+    height: 3rem;
+    margin-left: 2.8rem;
+    margin-top: 1rem;
+
+}
+
+aside .close{
+    display: none;
+}
+
+/* ------------------------SIDEBAR-------------------------------- */
+
+aside .sidebar{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 3rem;
+
+}
+
+aside h3{
+    font-weight: 600;
+}
+
+aside .sidebar a {
+    display: flex;
+    color: var(--color-info-dark);
+    margin-left: 1rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+}
+
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transition: all 300ms ease;
+}
+
+
+
+
+
+
+
+
+aside .sidebar a:hover{
+    color: var(--color-danger);
+
+}
+
+aside .sidebar a:hover span {
+margin-left: 1rem;
+}
+
+/* ================================================SIGN-IN============================================== */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'poppins', sans-serif;
+  }
+  /* .......BACKGROUND CHANGE FROM HERE......... */
+  body{
+    background: url('./images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+  
+  .wrapper{
+    display: flex;
+    max-width: 560px;
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    
+    
+  }
+  
+  .wrapper .left,
+  .wrapper .right{
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+  }
+  
+  .wrapper .left{
+    background: var(--color-info-light);
+  }
+  .wrapper .right:hover{
+    box-shadow: none;
+
+  }
+  .wrapper .left h3{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .wrapper .left img{
+    display: block;
+    width: 220px;
+    margin: 25px auto 0;
+    margin-top: 8rem;
+  }
+  
+  .wrapper .right{
+    background: #fff;
+  }
+  
+  .wrapper .right .tabs ul{
+    text-align: center;
+  }
+  
+  .wrapper .right .tabs ul li{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 24px;
+    color:  #783D41;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  .wrapper .right .tabs ul li.active{
+    border-bottom: 2px solid #494f57;
+  }
+  
+  .wrapper .right .register,
+  .wrapper .right .login{
+    margin-top: 20px;
+  }
+  
+  .wrapper .right .input_field{
+    margin-bottom: 15px;
+  }
+  
+  .wrapper .right .input_field .input{
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    font-size: 12px;
+    background: #ecebeb;
+  }
+  .wrapper .right .input_field span{
+    position: absolute;
+    right: 35px;
+    transform: translate(0,-50%);
+    top:50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--color-info-light);
+  }
+  
+  .wrapper .right .btn{
+    margin-top: 5rem;
+    background: #7C3F43;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    border-radius: var(--border-radius-2);
+    
+  }
+  
+  .wrapper .right .btn a {
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    display: flex;
+    padding-right: 1rem;
+    
+    
+    justify-content:space-evenly;
+    
+  }
+
+  .wrapper .right .btn:hover {
+background-color: #783D41;
+  }
+  .dropdown-container {
+    display: none;
+    background-color: var(--color-background);
+    padding-left: 8px;
+  }
+
+  /* ================================================SESSION MESSAGE============================================== */
+
+.success{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
+}

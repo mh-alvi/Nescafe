@@ -1,0 +1,434 @@
+ @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300;500;600;700;800&display=swap'); 
+
+/* -------------------Root variables--------------------- */
+:root{
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: #848bc8;
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --color-coffee-dark:#7C3F43;
+    --color-coffee-light:#783D41;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 .5rem 1rem var(--color-light);
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size:14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: poppins, sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+
+}
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    
+    
+}
+
+a{
+    color: var(--color-dark);
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+
+}
+
+h2{
+    font-size: 1.4rem;
+
+}
+
+h3{
+    font-size: 0.87;
+
+}
+
+h4{
+    font-size: 0.8rem;
+
+}
+
+h5{
+    font-size: 0.77;
+}
+
+small{
+    font-size: 0.75rem;
+}
+
+.profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow:hidden;
+
+}
+
+.text-muted{
+    color:var(--color-info-dark);
+}
+
+p{
+    color:var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+
+}
+
+.primary{
+    color:var(--color-primary);
+}
+.danger{
+    color:var(--color-danger);
+}
+.success{
+    color:var(--color-success);
+}
+.warning{
+    color:var(--color-warning);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+      box-sizing: border-box;
+}
+body{
+    background-size: cover;
+    background-position: center;
+  
+    font-family: sans-serif;
+}
+.menu-bar
+{
+    background: #6E363A;
+    text-align: center;
+}
+
+.menu-bar ul
+{
+    display: inline-flex;
+    list-style: none;
+    color: white;
+}
+.menu-bar ul li
+{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: white;
+
+}
+
+.active,.menu-bar ul li:hover
+{
+    background: #93494E;
+    border-radius: 3px;
+}
+
+.menu-bar .fa
+{
+    margin-right: 8px;
+}
+.header{
+    margin-left: 10rem;
+}
+
+.submenu-user
+{
+    display: none;
+}
+.menu-bar ul li:hover .submenu-user
+{
+    display: block;
+    position: absolute;
+    background: #6E363A;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.menu-bar ul li:hover .submenu-user ul
+{
+    display: block;
+     margin: 10px;
+}
+.menu-bar ul li:hover .submenu-user ul li
+{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius:0;
+    text-align: left;
+    
+}
+.menu-bar ul li:hover .submenu-user ul li:last-child
+{
+    border-bottom: none;    
+}
+.menu-bar ul li:hover .submenu-user ul li a:hover
+{
+    color: #CCBDBE;    
+}
+
+.fa-angle-right
+{
+    float: right;
+}
+.pro-submenu{
+    display: none;
+}
+
+.open-prosubmenu:hover .pro-submenu
+{
+      position: absolute;
+    display: block;
+    background: #6E363A;
+    margin-top: -40px;
+    margin-left: 140px;
+}
+
+
+.dropdown-container {
+    display: none;
+    background-color: var(--color-background);
+    padding-left: 8px;
+  }
+/* aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+} */
+
+.logo img{
+    width: 7rem;
+    height: 3rem;
+    margin-top: 1rem;
+    margin-left: -40px;
+
+}
+
+
+
+
+
+
+/*============================================ MAIN ===============================================*/
+
+main{
+    margin-top: 1.4rem;
+}
+/* ----------CALANDER-------------- */
+main .date{
+    display: inline-block;
+    background: var(--color-coffee-dark);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    margin-left: 1%;
+    margin-left: 10rem;
+}
+
+main .date input[type='date']{
+    background: transparent;
+    color: var(--color-white);
+
+}
+/* Chnge the color of the calendar icon */
+.date input{
+    color-scheme: dark;
+}
+
+main .insights {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+
+}
+
+main .insights > div {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    width: 30rem;
+    margin-left: 10rem;
+    margin-bottom: 1rem;
+
+}
+
+main .insights > div:hover{
+    box-shadow: none;
+}
+
+main .insights > div span {
+    background: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+main .insights > div.expenses span {
+background: var(--color-danger);
+}
+
+
+
+main .insights > div.profit span {
+    background: var(--color-success);
+}
+
+main .insights > div.loss span {
+    background: var(--color-warning);
+}
+
+main .insights > div .middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .insights h3 {
+    
+    font-size: 1rem;
+}
+
+main .insights .progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+main .insights svg {
+    width: 7rem;
+    height: 7rem;
+    
+    margin-left: 1rem;
+}
+
+main .insights svg circle {
+    fill: none;
+    stroke: var(--color-coffee-light);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(5px,5px);
+    stroke-dasharray:110;
+    stroke-dashoffset: 92;
+
+}
+
+main .insights .sales svg circle{
+
+    stroke-dasharray: 200;
+    stroke-dashoffset: -30;
+}
+main .insights .expenses svg circle{
+
+    stroke-dasharray: 80;
+    stroke-dashoffset: 20;
+}
+main .insights .profit svg circle{
+
+    stroke-dasharray: 110;
+    stroke-dashoffset: 35;
+}
+main .insights .loss svg circle{
+
+    stroke-dasharray: 250;
+    stroke-dashoffset: -200;
+}
+
+main .insights .progress .number {
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.8rem;
+}
+
+/*================================ RIGHT PROFILE ======================================*/
+
+.right{
+    margin-top: 1.4rem;
+
+}
+
+.right .top{
+    display: flex;
+    width: 50%;
+    
+    margin-left: -5rem;
+    
+}
+
+.right .top .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+    
+}
+
+
+
