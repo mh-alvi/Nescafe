@@ -21,7 +21,6 @@ if($_SERVER['REQUEST_METHOD']==="GET")
                     "productId"=>$row['id'],
                     "productName"=>$row['product_name'],
                     "productPrice"=>$row['product_price'],
-                    "productUnit"=>$row['unit'],
                     "boothId"=>$row['booth_id']
                 ));
             }
@@ -33,6 +32,14 @@ if($_SERVER['REQUEST_METHOD']==="GET")
                 "data"=>$products['records']
             ));
            
+        } else {
+            http_response_code(200);
+            echo json_encode(array(
+
+                "status" => false,
+                "message" => "Data Not Found"
+
+            ));
         }
     
     }else{

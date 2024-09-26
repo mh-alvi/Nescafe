@@ -540,3 +540,13 @@ background-color:var(--color-coffee-light);
     background-color: #ff4757 ;
     color: whitesmoke;
   }
+
+  .table .view-button{
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--color-coffee-dark);
+    background-color: #1e90ff;
+    color: whitesmoke
+  }

@@ -83,12 +83,19 @@ include('./partials/login-check.php');
         <!--Tagging sub menu-->
         <div class="submenu-user">
           <ul>
-            <li><a href="boothtag.php">Booth Tag</a></li>
+            <li class="open-prosubmenu"><a href="">Booth Tag</a><i class="fa fa-angle-right"></i>
+              <div class="pro-submenu">
+                <ul>
+                  <li><a href="boothtag.php">Employee Tag</a></li>
+                  <li><a href="product_tag.php">Product Tag</a></li>
+                </ul>
+              </div>
+            </li>
             <li class="open-prosubmenu"><a href="">Stock Tag</a><i class="fa fa-angle-right"></i>
               <div class="pro-submenu">
                 <ul>
-                  <li><a href="">Product &amp; Cup</a></li>
-                  <li><a href="">Cup &amp; Qty</a></li>
+                  <li><a href="productandcup.php">Product &amp; Cup</a></li>
+
                 </ul>
               </div>
             </li>
@@ -142,6 +149,7 @@ include('./partials/login-check.php');
 
         <form method="POST">
           <select name="employee_id" id="subject">
+            <option value="" disabled="" selected="selected">-- Select Employee --</option>
             <?php
             $sql = "SELECT * FROM tbl_employee WHERE em_status=1";
             $data =   $conn->query($sql);
@@ -152,7 +160,6 @@ include('./partials/login-check.php');
               <option value="<?= $row['id'] ?>"><?= $row['employee_name']; ?></option>
 
             <?php } ?>
-            <option value="" selected="selected">-- Select Employee --</option>
           </select>
       </div>
 
@@ -167,7 +174,7 @@ include('./partials/login-check.php');
 
           <div class="input-box">
             <span class="details"> </span>
-            <input type="password" minlength="8" maxlength="8" name="em_password" placeholder="Enter password" required>
+            <input type="password" minlength="5" name="em_password" placeholder="Enter password" required>
           </div>
         </div>
 
@@ -260,6 +267,7 @@ include('./partials/login-check.php');
               <th>User-ID</th>
               <th>Password</th>
               <th>Status</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -288,9 +296,9 @@ include('./partials/login-check.php');
 
                   $sql5 = "SELECT employee_name FROM tbl_employee WHERE id = $em_id";
                   $res5 = mysqli_query($conn, $sql5);
-                  if($res5 == true){
-                  $data = mysqli_fetch_assoc($res5);
-                  $employee_name = $data['employee_name'];
+                  if ($res5 == true) {
+                    $data = mysqli_fetch_assoc($res5);
+                    $employee_name = $data['employee_name'];
                   }
 
                   // display the value in table
@@ -312,6 +320,10 @@ include('./partials/login-check.php');
                         echo '<p><a href="./all-status/auth-status.php?id=' . $id  . '&action=1"><button  class="inactive-button">Inactive</button></a></p>';
                       }
                       ?>
+                    </td>
+                    <td>
+                      <a href="<?php echo SITEURL; ?>update_auth.php?id=<?php echo $id; ?>"><button class="active-button">Update</button></a>
+                      <a href="<?php echo SITEURL; ?>delete_auth.php?id=<?php echo $id; ?>"><button class="inactive-button">Remove</button></a>
                     </td>
                   </tr>
 

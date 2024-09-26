@@ -81,12 +81,19 @@ include('./partials/login-check.php');
         <!--Tagging sub menu-->
         <div class="submenu-user">
           <ul>
-            <li><a href="boothtag.php">Booth Tag</a></li>
+          <li class="open-prosubmenu"><a href="">Booth Tag</a><i class="fa fa-angle-right"></i>
+              <div class="pro-submenu">
+                <ul>
+                  <li><a href="boothtag.php">Employee Tag</a></li>
+                  <li><a href="product_tag.php">Product Tag</a></li>
+                </ul>
+              </div>
+            </li>
             <li class="open-prosubmenu"><a href="">Stock Tag</a><i class="fa fa-angle-right"></i>
               <div class="pro-submenu">
                 <ul>
-                  <li><a href="">Product &amp; Cup</a></li>
-                  <li><a href="">Cup &amp; Qty</a></li>
+                  <li><a href="productandcup.php">Product &amp; Cup</a></li>
+                  
                 </ul>
               </div>
             </li>
@@ -165,8 +172,6 @@ include('./partials/login-check.php');
           if ($res == true) {
             //query executed and category added
             $_SESSION['add'] = "<div class='success'>Booth Added Successfully!!</div>";
-            //redirect  to manage category
-            // header("Location:http://localhost/nescafe/booth.php");
         ?>
             <script>
               window.location.href = '<?php echo SITEURL ?>booth.php';
@@ -174,8 +179,6 @@ include('./partials/login-check.php');
           <?php  } else {
             //failed to add category
             $_SESSION['add'] = "<div class='error'>Failed to Add Booth!!</div>";
-            //redirect  to manage category
-            // header("Location:" . SITEURL . 'booth.php');
           ?>
             <script>
               window.location.href = '<?php echo SITEURL ?>booth.php';

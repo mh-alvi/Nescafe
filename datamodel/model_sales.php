@@ -35,7 +35,8 @@ class sales
     function post_sales()
     {
         //$q='SELECT * FROM ' .$this->table_sales. ' WHERE booth_id= ?';
-        $q='INSERT INTO '.$this->table_sales.'VALUE(opening=? AND closing=? AND opening=? AND wastage=? AND sales=? AND total=? AND due=? AND other=? AND expense=? AND total_expense=? AND collection=?)';
+        $q='INSERT INTO '.$this->table_sales. 'VALUE(product_id=? AND opening=? AND closing=? AND wastage=? AND sales=? AND total=? AND due=? AND other=? AND expense=? AND total_expense=? AND collection=? AND total_cash=?)';
+
         $stmt = $this->conn->prepare($q);
 
         $stmt->bind_param("i",$this->product_id);
@@ -48,6 +49,7 @@ class sales
         return array();
     }
    
-
 }
+
+
 ?>

@@ -81,12 +81,19 @@ include('./partials/login-check.php');
         <!--Tagging sub menu-->
         <div class="submenu-user">
           <ul>
-            <li><a href="boothtag.php">Booth Tag</a></li>
+          <li class="open-prosubmenu"><a href="">Booth Tag</a><i class="fa fa-angle-right"></i>
+              <div class="pro-submenu">
+                <ul>
+                  <li><a href="boothtag.php">Employee Tag</a></li>
+                  <li><a href="product_tag.php">Product Tag</a></li>
+                </ul>
+              </div>
+            </li>
             <li class="open-prosubmenu"><a href="">Stock Tag</a><i class="fa fa-angle-right"></i>
               <div class="pro-submenu">
                 <ul>
-                  <li><a href="">Product &amp; Cup</a></li>
-                  <li><a href="">Cup &amp; Qty</a></li>
+                  <li><a href="productandcup.php">Product &amp; Cup</a></li>
+                  
                 </ul>
               </div>
             </li>
@@ -140,15 +147,15 @@ include('./partials/login-check.php');
             </div>
             <div class="input-box">
               <span class="details">Designation</span>
-              <input type="text" name="designation" placeholder="Enter designation" required>
+              <input type="text" name="designation" placeholder="Enter designation">
             </div>
             <div class="input-box">
               <span class="details">Job-ID</span>
-              <input type="text" name="job-id" placeholder="Enter job-id" required>
+              <input type="text" name="job-id" placeholder="Enter job-id">
             </div>
             <div class="input-box">
               <span class="details">Email</span>
-              <input type="email" name="email" placeholder="Enter email" required>
+              <input type="email" name="email" placeholder="Enter email">
             </div>
             <div class="input-box">
               <span class="details">Phone Number</span>
@@ -160,15 +167,15 @@ include('./partials/login-check.php');
             </div>
             <div class="input-box">
               <span class="details">NID</span>
-              <input type="text" name="nid" placeholder="Enter NID no" required>
+              <input type="text" name="nid" placeholder="Enter NID no">
             </div>
             <div class="input-box">
               <span class="details">Education</span>
-              <input type="text" name="education" placeholder="Enter education details" required>
+              <input type="text" name="education" placeholder="Enter education details">
             </div>
             <div class="input-box">
               <span class="details">Social link</span>
-              <input type="text" name="social-link" placeholder="Enter social link" required>
+              <input type="text" name="social-link" placeholder="Enter social link">
             </div>
             <div class="input-box">
               <span class="details">Join Date</span>

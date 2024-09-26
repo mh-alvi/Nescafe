@@ -82,12 +82,19 @@ include('./partials/login-check.php');
                 <!--Tagging sub menu-->
                 <div class="submenu-user">
                     <ul>
-                        <li><a href="boothtag.php">Booth Tag</a></li>
+                        <li class="open-prosubmenu"><a href="">Booth Tag</a><i class="fa fa-angle-right"></i>
+                            <div class="pro-submenu">
+                                <ul>
+                                    <li><a href="boothtag.php">Employee Tag</a></li>
+                                    <li><a href="product_tag.php">Product Tag</a></li>
+                                </ul>
+                            </div>
+                        </li>
                         <li class="open-prosubmenu"><a href="">Stock Tag</a><i class="fa fa-angle-right"></i>
                             <div class="pro-submenu">
                                 <ul>
-                                    <li><a href="">Product &amp; Cup</a></li>
-                                    <li><a href="">Cup &amp; Qty</a></li>
+                                    <li><a href="productandcup.php">Product &amp; Cup</a></li>
+                                    
                                 </ul>
                             </div>
                         </li>
@@ -135,6 +142,7 @@ include('./partials/login-check.php');
 
                     <form method="POST">
                         <select name="booth_id" id="subject">
+                            <option value="" disabled="" selected="selected">-- Select Booth --</option>
                             <?php
                             $sql = "SELECT * FROM tbl_booth WHERE bt_status=1";
                             $data =   $conn->query($sql);
@@ -143,10 +151,9 @@ include('./partials/login-check.php');
                             ?>
                                 <option value="<?php $booth_id ?>"><?= $row["booth_name"] ?></option>
 
-                            <?php } 
-                            
+                            <?php }
+
                             ?>
-                            <option value="" selected="selected">-- Select Booth --</option>
                         </select>
                 </div>
                 <div class="btn"><a href="./createproduct.php"><span class="material-icons-sharp">person_add</span>
@@ -168,7 +175,7 @@ include('./partials/login-check.php');
                         $data =   $conn->query($sql);
                         $sl = 1;
                         foreach ($data as $row) {
-                            $booth_id = $row["booth_id"];
+                            $booth_id = $row["pro_booth_id"];
                             $booth = '';
                             if ($booth_id == null) {
                                 $booth = 'Unassigned';

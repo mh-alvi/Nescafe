@@ -260,6 +260,7 @@ body{
   
   border-radius: var(--border-radius-1);
   margin-top: 5px;
+  margin-bottom: 5px;
   
 }
 .drop select{
@@ -269,6 +270,7 @@ body{
   margin-top: 10px;
   font-family: "poppins",sans-serif;
   font-weight: bold;
+  padding-bottom: 6px;
   
   
 }
@@ -283,7 +285,7 @@ body{
     display: inline-block;
     background: var(--color-coffee-dark);
     border-radius: var(--border-radius-1);
-    margin-top: 1rem;
+    
     padding: 0.5rem 1.6rem;
     display: flex;
     align-items: center;
@@ -344,7 +346,7 @@ table thead tr{
 }
 .table th,
 .table td{
-  padding: 12px 20px;
+  padding: 12px 64px;
 }
 .table tbody tr{
   border-bottom: 1px solid #ddd;
@@ -538,3 +540,34 @@ background-color:var(--color-coffee-light);
     background-color: var(--color-background);
     padding-left: 8px;
   }
+
+  form .button{
+    height: 30px;
+    margin: 8px;
+    width: 80px;
+    
+  }
+
+  form .button input{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #7C3F43, #783D41);
+    margin-left: -8px;
+  }
+
+      /* ================================================SESSION MESSAGE============================================== */
+
+      .success{
+        color:#2ed573;
+    }
+    .error{
+        color: #ff4757;
+    }

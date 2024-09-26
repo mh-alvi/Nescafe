@@ -85,12 +85,19 @@ include('./partials/login-check.php');
         <!--Tagging sub menu-->
         <div class="submenu-user">
           <ul>
-            <li><a href="boothtag.php">Booth Tag</a></li>
+          <li class="open-prosubmenu"><a href="">Booth Tag</a><i class="fa fa-angle-right"></i>
+              <div class="pro-submenu">
+                <ul>
+                  <li><a href="productandcup.php">Employee Tag</a></li>
+                  <li><a href="">Product Tag</a></li>
+                </ul>
+              </div>
+            </li>
             <li class="open-prosubmenu"><a href="">Stock Tag</a><i class="fa fa-angle-right"></i>
               <div class="pro-submenu">
                 <ul>
-                  <li><a href="">Product &amp; Cup</a></li>
-                  <li><a href="">Cup &amp; Qty</a></li>
+                  <li><a href="productandcup.php">Product &amp; Cup</a></li>
+                  
                 </ul>
               </div>
             </li>
@@ -197,7 +204,7 @@ include('./partials/login-check.php');
                       ?>
                     </td>
 
-                    <td><a href="./profile.php?id=<?php echo $em_details; ?>"><button>View</button></a></td>
+                    <td><a href="./profile.php?id=<?php echo $em_details; ?>"><button class="view-button">View</button></a></td>
                   </tr>
 
             <?php

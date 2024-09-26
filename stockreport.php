@@ -87,12 +87,19 @@ include('./partials/login-check.php');
                 <!--Tagging sub menu-->
                 <div class="submenu-user">
                     <ul>
-                        <li><a href="boothtag.php">Booth Tag</a></li>
+                        <li class="open-prosubmenu"><a href="">Booth Tag</a><i class="fa fa-angle-right"></i>
+                            <div class="pro-submenu">
+                                <ul>
+                                    <li><a href="boothtag.php">Employee Tag</a></li>
+                                    <li><a href="product_tag.php">Product Tag</a></li>
+                                </ul>
+                            </div>
+                        </li>
                         <li class="open-prosubmenu"><a href="">Stock Tag</a><i class="fa fa-angle-right"></i>
                             <div class="pro-submenu">
                                 <ul>
-                                    <li><a href="">Product &amp; Cup</a></li>
-                                    <li><a href="">Cup &amp; Qty</a></li>
+                                    <li><a href="productandcup.php">Product &amp; Cup</a></li>
+
                                 </ul>
                             </div>
                         </li>
@@ -128,46 +135,67 @@ include('./partials/login-check.php');
         <!-- -------------------------------START OF EMPLOYEE------------------------------ -->
         <section class="attendance">
             <div class="attendance-list">
-                <h1>Monthly Stock Report</h1>
+                <h1>Stock Report</h1>
                 <h3>Choose Booth:</h3>
-                <div class="drop">
 
-                    <form method="POST">
-                        <select name="booth_id" id="subject">
+                <form id="form1" method="GET" target="_blank">
+                    <div class="drop">
+
+                        <select name="booth_id" id="sale">
+                            <option value="" disabled="" selected="">-- Select Booth --</option>
                             <?php
                             $sql = "SELECT * FROM tbl_booth";
                             $data =   $conn->query($sql);
+                            $booth_id = $row['booth_id'];
+
                             foreach ($data as $row) {
                             ?>
 
-                                <option value="<?= $row["id"] ?>"><?= $row["booth_name"] ?></option>
+                                <option value="<?= $row['id'] ?>"><?= $row["booth_name"] ?></option>
 
-                            <?php } ?>
-                            <option value="" selected="selected">-- Select Booth --</option>
+                            <?php
+
+                            }
+                            ?>
                         </select>
-                </div>
-                <div class="date">
-                    <input type="date" name="" id="">
-                </div>
-                <div class="export">
+                    </div>
+                    <h3>From:</h3>
+                    <div class="date">
+                        <!-- <input type="date" name=""> -->
+                        <input type="date" name="date">
+                    </div>
+                    <h3>To:</h3>
+                    <div class="date">
+                        <!-- <input type="date" name=""> -->
+                        <input type="date" name="date2">
+                    </div>
+                    <div class="button">
+                        <input type="submit" name="submit" value="Search">
 
-                    <button class="btn00"><i class="fa-sharp fa-solid fa-file-excel"></i> Excel File</button>
-                    <button class="btn00"><i class="fa-sharp fa-solid fa-file-pdf"></i> Pdf File</button>
-                </div>
+                    </div>
+
+                    <div class="export">
+
+                        <button class="btn00"><i class="fa-sharp fa-solid fa-file-excel"></i> Excel File</button>
+
+                        <button type="submit" name="pdf_generator" onclick="submitForm('generatePdf_stock.php')" class="btn00"><i class="fa-sharp fa-solid fa-file-pdf"></i> Pdf File</button>
+                    </div>
+                </form>
+
                 <div class="table-wrapper">
 
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>S.N.</th>
                                 <th>Product Name</th>
                                 <th>Price</th>
                                 <th>Opening Stock</th>
                                 <th>Recieved</th>
                                 <th>Total Stock</th>
-                                <th>Total Used</th>
                                 <th>Total Wastage</th>
                                 <th>Total Damage</th>
-                                <th>Use</th>
+                                <th>Total Used</th>
                                 <th>Extra Sale</th>
                                 <th>Closing Stock</th>
                                 <th>Amount</th>
@@ -175,96 +203,77 @@ include('./partials/login-check.php');
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Coffee</td>
-                                <td>470.85</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>0</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>12</td>
-                                <td>-</td>
-                                <td>-5650.2</td>
-                            </tr>
-                            <tr class="">
-                                <td>Coffee</td>
-                                <td>470.85</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>0</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>12</td>
-                                <td>-</td>
-                                <td>-5650.2</td>
-                            </tr>
-                            <tr>
-                                <td>Coffee</td>
-                                <td>470.85</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>0</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>12</td>
-                                <td>-</td>
-                                <td>-5650.2</td>
-                            </tr>
-                            <tr>
-                                <td>Coffee</td>
-                                <td>470.85</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>0</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>12</td>
-                                <td>-</td>
-                                <td>-5650.2</td>
-                            </tr>
-                            <tr>
-                                <td>Coffee</td>
-                                <td>470.85</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>0</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>12</td>
-                                <td>-</td>
-                                <td>-5650.2</td>
-                            </tr>
-                            <tr>
-                                <td>Coffee</td>
-                                <td>470.85</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>0</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-12</td>
-                                <td>-</td>
-                                <td>12</td>
-                                <td>-</td>
-                                <td>-5650.2</td>
-                            </tr>
+                            <?php
+                            if (isset($_GET['submit'])) {
+                                $booth_id = $_GET['booth_id'];
+                                $date = date("d-m-Y", strtotime($_GET['date']));
+
+                                //2. Create sql query to get the details
+                                $sql2 = "SELECT * FROM tbl_stock_report WHERE booth_id='$booth_id' AND posting_date='$date'";
+
+                                //Execute the query
+                                $res2 = mysqli_query($conn, $sql2);
+
+                                $sl = 1;
+                                //check whether the query is executed or not
+                                if ($res2 == true) {
+                                    //check the data is available or not
+                                    $count = mysqli_num_rows($res2);
+                                    // $rows = mysqli_fetch_assoc($res2);
+                                    if ($count > 0) { //print message already exist
+                                        //get the details
+                                        while ($rows = mysqli_fetch_assoc($res2)) {
+                                            $stock_id = $rows['stock_id'];
+                                            $stock_price = $rows['stock_price'];
+                                            $opening_stock = $rows['opening_stock'];
+                                            $stock_rec = $rows['stock_receive'];
+                                            $total_stock = $rows['total_stock'];
+                                            $stock_used = $rows['stock_used'];
+                                            $stock_waste = $rows['stock_waste'];
+                                            $stock_damage = $rows['stock_damage'];
+                                            $closing_stock = $rows['closing_stock'];
+                                            $stock_cost = $rows['total_stock_price'];
+                            ?>
+                                            <tr>
+                                                <td><?php echo $sl++; ?></td>
+                                                <td>
+                                                    <?php
+                                                    $sql3 = "SELECT * FROM tbl_product_stock WHERE id='$stock_id'";
+                                                    $res3 = mysqli_query($conn, $sql3);
+                                                    if ($res3 == true) {
+                                                        $count = mysqli_num_rows($res3);
+                                                        if ($count > 0) {
+                                                            while ($rows2 = mysqli_fetch_assoc($res3)) {
+                                                                $stock_name = $rows2['stock_name'];
+                                                            }
+                                                        }
+                                                    }
+                                                    echo $stock_name;
+                                                    ?>
+                                                </td>
+                                                <td><?php echo $stock_price; ?></td>
+                                                <td><?php echo $opening_stock; ?></td>
+                                                <td><?php echo $stock_rec; ?></td>
+                                                <td><?php echo $total_stock; ?></td>
+                                                <td><?php echo $stock_used; ?></td>
+                                                <td><?php echo $stock_waste; ?></td>
+                                                <td><?php echo $stock_damage; ?></td>
+                                                <td>-</td>
+                                                <td><?php echo $stock_damage; ?></td>
+                                                <td>-</td>
+                                                <td><?php echo $stock_cost; ?></td>
+                                            </tr>
+                            <?php
+                                        }
+                                    } else {
+                                        echo
+                                        '<tr>
+                                            <td colspan="13"><center>Record Not Found</center></td>
+                                        </tr>';
+                                    }
+                                }
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -310,6 +319,14 @@ toggle between hiding and showing the dropdown content */
                     dropdownContent.style.display = "block";
                 }
             });
+        }
+    </script>
+
+    <script type="text/javascript">
+        function submitForm(action) {
+            var form = document.getElementById('form1');
+            form.action = action;
+            form.submit();
         }
     </script>
 

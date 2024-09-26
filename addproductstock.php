@@ -73,12 +73,19 @@ include('./partials/login-check.php');
         <!--Tagging sub menu-->
         <div class="submenu-user">
           <ul>
-            <li><a href="boothtag.php">Booth Tag</a></li>
+            <li class="open-prosubmenu"><a href="">Booth Tag</a><i class="fa fa-angle-right"></i>
+              <div class="pro-submenu">
+                <ul>
+                  <li><a href="boothtag.php">Employee Tag</a></li>
+                  <li><a href="product_tag.php">Product Tag</a></li>
+                </ul>
+              </div>
+            </li>
             <li class="open-prosubmenu"><a href="">Stock Tag</a><i class="fa fa-angle-right"></i>
               <div class="pro-submenu">
                 <ul>
-                  <li><a href="">Product &amp; Cup</a></li>
-                  <li><a href="">Cup &amp; Qty</a></li>
+                  <li><a href="productandcup.php">Product &amp; Cup</a></li>
+
                 </ul>
               </div>
             </li>
@@ -127,7 +134,7 @@ include('./partials/login-check.php');
 
       <form method="POST">
         <div class="header">
-          <h3>Product:</h3>
+          <h3>Ingredient:</h3>
         </div>
         <div class="drop">
           <input type="text" name="product-name" id="text" placeholder="Enter your product name" required>
@@ -136,14 +143,14 @@ include('./partials/login-check.php');
           <h3>Quantity:</h3>
         </div>
         <div class="drop">
-          <input type="number" name="product-quantity" id="quantity" placeholder="Enter product quantity" min="1" max="1000" required>
+          <input type="number" name="product-quantity" id="quantity" placeholder="Enter product quantity" min="0">
         </div>
 
 
         <div class="gender-details">
           <input type="radio" name="unit" value="Kilogram(KG)" id="dot-1">
           <input type="radio" name="unit" value="Gram(G)" id="dot-2">
-          <input type="radio" name="unit" value="Others" id="dot-3">
+          <input type="radio" name="unit" value="Pcs" id="dot-3">
           <span class="gender-title">Unit</span>
           <div class="category">
             <label for="dot-1">
@@ -164,6 +171,7 @@ include('./partials/login-check.php');
         <div class="content">
           <div class="submit">
             <button class="button" type="submit" name="submit">Add</button>
+            <button onclick="document.location='approve.php'" class="button" type="submit" name="submit">Approve</button>
           </div>
         </div>
       </form>
@@ -218,9 +226,10 @@ include('./partials/login-check.php');
         <thead>
           <tr>
             <th>S.N.</th>
-            <th>Product</th>
+            <th>Ingredient</th>
             <th>Quantity</th>
             <th>Unit</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -230,13 +239,18 @@ include('./partials/login-check.php');
           $data =   $conn->query($sql);
           $sl = 1;
           foreach ($data as $row) {
-            
+            $id = $row['id'];
+
           ?>
             <tr>
               <td><?= $sl++ ?></td>
               <td> <?= $row["stock_name"] ?></td>
               <td><?= $row["stock_quantity"] ?></td>
               <td><?= $row["stock_unit"] ?></td>
+              <td>
+                <button class="active-button"><a href="">Edit</a></button>
+                <button class="active-button"><a href="<?php echo SITEURL; ?>update_productstock.php?id=<?php echo $id; ?>">Update</a></button>
+              </td>
             </tr>
           <?php }
           ?>
@@ -270,6 +284,7 @@ include('./partials/login-check.php');
       });
     }
   </script>
+
 
 
 </body>

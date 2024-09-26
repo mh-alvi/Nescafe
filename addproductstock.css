@@ -427,9 +427,11 @@ form .input-box span.details{
     text-align: left;
     font-weight: bold;
   }
+  
   .table th,
   .table td{
     padding: 12px 15px;
+    text-align: center;
   }
   .table tbody tr{
     border-bottom: 1px solid #ddd;

@@ -23,18 +23,25 @@ if($_SERVER['REQUEST_METHOD']==="POST")
                     array_push($products["records"],array(
                         "productId"=>$row['id'],
                         "productName"=>$row['product_name'],
-                        "productPrice"=>$row['product_price'],
-                        "productUnit"=>$row['unit']   
+                        "productPrice"=>$row['product_price']
                     ));
                 }
         
                 http_response_code(200);
                 echo json_encode(array(
                     "status"=>true,
-                    "message"=>"Data found",
+                    "message"=>"Product found",
                     "data"=>$products['records']
                 ));
                
+            } else {
+                http_response_code(200);
+                echo json_encode(array(
+    
+                    "status" => false,
+                    "message" => "Product Not Found"
+    
+                ));
             }
 
         }
@@ -50,6 +57,3 @@ if($_SERVER['REQUEST_METHOD']==="POST")
             "data"=>null
         ));
     }
-
-?>
-    

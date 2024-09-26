@@ -81,12 +81,19 @@ include('./partials/login-check.php');
         <!--Tagging sub menu-->
         <div class="submenu-user">
           <ul>
-            <li><a href="">Booth Tag</a></li>
+          <li class="open-prosubmenu"><a href="">Booth Tag</a><i class="fa fa-angle-right"></i>
+              <div class="pro-submenu">
+                <ul>
+                  <li><a href="boothtag.php">Employee Tag</a></li>
+                  <li><a href="product_tag.php">Product Tag</a></li>
+                </ul>
+              </div>
+            </li>
             <li class="open-prosubmenu"><a href="">Stock Tag</a><i class="fa fa-angle-right"></i>
               <div class="pro-submenu">
                 <ul>
-                  <li><a href="">Product &amp; Cup</a></li>
-                  <li><a href="">Cup &amp; Qty</a></li>
+                  <li><a href="productandcup.php">Product &amp; Cup</a></li>
+                  
                 </ul>
               </div>
             </li>
@@ -144,27 +151,6 @@ include('./partials/login-check.php');
                             <span class="details">Booth</span>
                             <input type="text" placeholder="Enter booth name" required>
                           </div> -->
-
-            <div class="gender-details">
-              <input type="radio" name="unit" value="Kilogram(KG)" id="dot-1">
-              <input type="radio" name="unit" value="Gram(G)" id="dot-2">
-              <input type="radio" name="unit" value="Others" id="dot-3">
-              <span class="gender-title">Unit</span>
-              <div class="category">
-                <label for="dot-1">
-                  <span class="dot one"></span>
-                  <span class="gender">Kilogram(KG)</span>
-                </label>
-                <label for="dot-2">
-                  <span class="dot two"></span>
-                  <span class="gender">Gram(G)</span>
-                </label>
-                <label for="dot-3">
-                  <span class="dot three"></span>
-                  <span class="gender">Others</span>
-                </label>
-              </div>
-            </div>
             <div class="button">
               <input type="submit" name="submit" value="Create">
             </div>
@@ -175,20 +161,12 @@ include('./partials/login-check.php');
           $product_name = $_POST['product-name'];
           $product_price = $_POST['product-price'];
 
-          if ($_POST['unit'] == 'Kilogram(KG)') {
-            //Get the value from form
-            $unit = $_POST['unit'];
-          } elseif ($_POST['unit'] == 'Gram(G)') {
-            $unit = $_POST['unit'];
-          } else {
-            $unit = $_POST['unit'];
-          }
+        
 
           //2. Create sql query to insert category into database
           $sql = "INSERT INTO tbl_product SET
                 product_name = '$product_name',
-                product_price = '$product_price',
-                unit = '$unit'
+                product_price = '$product_price'
                 ";
 
           //execute the query and save it in database

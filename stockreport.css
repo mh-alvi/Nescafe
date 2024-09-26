@@ -265,7 +265,7 @@ body{
   cursor: pointer;
   width: 175px;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   font-family: "poppins",sans-serif;
   font-weight: bold;
   
@@ -281,7 +281,7 @@ body{
     display: inline-block;
     background: var(--color-coffee-dark);
     border-radius: var(--border-radius-1);
-    margin-top: 1rem;
+    
     padding: 0.5rem 1.6rem;
     display: flex;
     align-items: center;
@@ -535,4 +535,26 @@ background-color:var(--color-coffee-light);
     display: none;
     background-color: var(--color-background);
     padding-left: 8px;
+  }
+
+  form .button{
+    height: 30px;
+    margin: 8px;
+    width: 80px;
+    
+  }
+
+  form .button input{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #7C3F43, #783D41);
+    margin-left: -8px;
   }

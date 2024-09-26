@@ -82,12 +82,19 @@ include('./partials/login-check.php');
         <!--Tagging sub menu-->
         <div class="submenu-user">
           <ul>
-            <li><a href="boothtag.php">Booth Tag</a></li>
+            <li class="open-prosubmenu"><a href="">Booth Tag</a><i class="fa fa-angle-right"></i>
+              <div class="pro-submenu">
+                <ul>
+                  <li><a href="boothtag.php">Employee Tag</a></li>
+                  <li><a href="product_tag.php">Product Tag</a></li>
+                </ul>
+              </div>
+            </li>
             <li class="open-prosubmenu"><a href="">Stock Tag</a><i class="fa fa-angle-right"></i>
               <div class="pro-submenu">
                 <ul>
-                  <li><a href="">Product &amp; Cup</a></li>
-                  <li><a href="">Cup &amp; Qty</a></li>
+                  <li><a href="productandcup.php">Product &amp; Cup</a></li>
+                  
                 </ul>
               </div>
             </li>
@@ -126,7 +133,7 @@ include('./partials/login-check.php');
     <!-- ------------------------------------END OF SIDEBAR ------------------------------------->
     <div class="containerR">
 
-      <div class="title">Booth Tagging</div>
+      <div class="title">Employee Tagging</div>
       <div class="header">
         <h3>Select Booth:</h3>
       </div>
@@ -141,6 +148,7 @@ include('./partials/login-check.php');
 
         <form method="POST">
           <select name="booth_id" id="subject">
+          <option value="" disabled="" selected="selected">-- Select Booth --</option>
             <?php
             $sql = "SELECT * FROM tbl_booth WHERE bt_status=1";
             $data =   $conn->query($sql);
@@ -148,7 +156,6 @@ include('./partials/login-check.php');
             ?>
               <option value="<?= $row["id"] ?>"><?= $row["booth_name"] ?></option>
             <?php } ?>
-            <option value="" selected="selected">-- Select Booth --</option>
           </select>
       </div>
       <div class="header">
@@ -157,6 +164,7 @@ include('./partials/login-check.php');
       <div class="drop">
 
         <select name="employee_id" id="subject">
+          <option value="" disabled="" selected="selected">-- Select Employee --</option>
           <?php
           $sql = "SELECT * FROM tbl_employee WHERE em_status=1";
           $data =   $conn->query($sql);
@@ -166,7 +174,6 @@ include('./partials/login-check.php');
             <option value="<?= $row["id"] ?>"><?= $row["employee_name"] ?></option>
 
           <?php } ?>
-          <option value="" selected="selected">-- Select Employee --</option>
         </select>
       </div>
 
@@ -183,8 +190,6 @@ include('./partials/login-check.php');
         //check whether the submit button is clicked or not
         if (isset($_POST['submit'])) {
           //1. Get the id of selected admin
-          $booth_name = $_POST['booth_name'];
-          $employee_name = $_POST['employee_name'];
           $booth_id = $_POST['booth_id'];
           $id = $_POST['employee_id'];
           //2. Create sql query to get the details
@@ -212,8 +217,6 @@ include('./partials/login-check.php');
 
               //Create a sql query to update admin
               $sql3 = "INSERT tbl_tagging SET
-    booth_name = '$booth_name',
-    employee_name = '$employee_name',
     booth_id = '$booth_id',
     employee_id = '$id';
     ";
